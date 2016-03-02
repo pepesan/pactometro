@@ -21,6 +21,9 @@ div{
     margin-top: 10px;
     font-size: 90px;
 }
+#cabecera div img {
+    max-height: 100px;
+}
 .azulito{
     background-color: aliceblue;
     border: 2px solid black;
