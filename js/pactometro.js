@@ -104,7 +104,9 @@ var app={
     },
     pinta_init:function(){
         var num=resultados.length;
-
+        if(num==0){
+            $("#partidos").append("<h1>No hay Datos</h1>");
+        }
         for(var i=0;i<num;i++){
             //console.log(i);
             var partido=this.resultados[i];
@@ -119,7 +121,6 @@ var app={
                 " " +
                 "><img src='img/"+partido.imagen+"' width='100px'/> " +
                 "<h2>"+partido.dipu+"</h2></button>";
-
             //console.log(partidoHTML);
             //Injertando al final http://api.jquery.com/append/
             $("#partidos").append(partidoHTML);
@@ -141,7 +142,22 @@ var app={
         console.log(app.resultados[0].nombre);
         console.log(app.resultados[0].dipu);
         */
-        app.pinta_init();
+        //console.log("init");
+        var jqxhr=$.get("resultados.json")
+            .done(function(data) {
+                //console.log(eval(data));
+                app.resultados=eval(data);;
+
+            })
+            .fail(function(error) {
+                console.log(error);
+                console.log("error");
+                app.resultados=[];
+            })
+            .always(function() {
+                app.pinta_init();
+            });
+
         $("#sies").click(app.coloca);
         $("#noes").click(app.coloca);
         $("#abst").click(app.coloca);
