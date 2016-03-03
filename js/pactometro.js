@@ -95,10 +95,13 @@ var app={
             dipus=parseInt(dipus)+parseInt(boton.attr("data-dipu"));
             $(div).children("h2")[0].innerHTML=dipus;
             //console.log($(boton[i]).attr("data-nombre"));
-            $(app.seleccionados[i]).hide();
+            $(app.seleccionados[i]).fadeOut();
             //pinta logo en div
-            var HTML="<img src='img/"+boton.attr("data-img")+"'/>";
+            var HTML="<img id='img-"+boton.attr("data-nombre")+"' src='img/"+boton.attr("data-img")+"' " +
+                " style='display:none;'/>";
             div.append(HTML);
+            $("#img-"+boton.attr("data-nombre")).fadeIn();
+
         }
         app.seleccionados=[];
     },
@@ -141,7 +144,21 @@ var app={
         console.log(app.resultados[0].nombre);
         console.log(app.resultados[0].dipu);
         */
-        app.pinta_init();
+        console.log("init");
+        var jqxhr=$.get("resultados.json")
+            .done(function(data) {
+                //console.log(eval(data));
+                app.resultados=eval(data);
+                app.pinta_init();
+            })
+            .fail(function(error) {
+                console.log(error);
+                console.log("error");
+            })
+            .always(function() {
+                console.log("allways");
+            });
+
         $("#sies").click(app.coloca);
         $("#noes").click(app.coloca);
         $("#abst").click(app.coloca);
