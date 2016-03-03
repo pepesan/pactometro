@@ -88,7 +88,7 @@ var app={
         var num=app.seleccionados.length;
         var div=$(evento.currentTarget);
         var dipus=parseInt($(div).children("h2")[0].innerHTML);
-        console.log(dipus);
+        //console.log(dipus);
         for (var i=0;i<num;i++){
             var boton=$(app.seleccionados[i]);
             //console.log(boton.attr("data-dipu"));
@@ -101,6 +101,38 @@ var app={
             div.append(HTML);
         }
         app.seleccionados=[];
+    },
+    myHelper:function ( event ) {
+        app.seleccionados.push($(event.currentTarget.outerHTML));
+        //console.log(event.currentTarget);
+        return event.currentTarget.outerHTML;
+    },
+    colocaBoton:function(event,elemento){
+
+    },
+    handleDropEvent:function ( event, ui ) {
+        var draggable = ui.draggable;
+        var num=app.seleccionados.length;
+        //console.log(event.target);
+        //console.log(ui.draggable);
+        var div=$(event.target);
+        var dipus=parseInt($(div).children("h2")[0].innerHTML);
+        //console.log(dipus);
+        for (var i=0;i<num;i++){
+            var boton=$(app.seleccionados[i]);
+            //console.log(boton.attr("data-dipu"));
+            dipus=parseInt(dipus)+parseInt(boton.attr("data-dipu"));
+            $(div).children("h2")[0].innerHTML=dipus;
+            //console.log($(boton[i]).attr("data-nombre"));
+            $(app.seleccionados[i]).hide();
+            //pinta logo en div
+            var HTML="<img src='img/"+boton.attr("data-img")+"'/>";
+            div.append(HTML);
+        }
+        app.seleccionados=[];
+        $(draggable).hide();
+        //app.colocaBoton(event,draggable);
+        //alert( 'The square with ID "' + draggable.attr('id') + '" was dropped onto me!' );
     },
     pinta_init:function(){
         var num=resultados.length;
@@ -126,6 +158,12 @@ var app={
         }
         //console.log($(".boton-partido"));
         $(".boton-partido").click(app.pulsado);
+        $(".boton-partido").draggable({
+            cancel:false,
+            cursor: 'move',
+            containment: 'document',
+            helper: app.myHelper
+        });
     },
     resetea:function(){
         $("#cabecera div h2").text("0");
@@ -142,10 +180,12 @@ var app={
         console.log(app.resultados[0].dipu);
         */
         app.pinta_init();
-        $("#sies").click(app.coloca);
-        $("#noes").click(app.coloca);
-        $("#abst").click(app.coloca);
+        $("#sies, #noes,#abst").click(app.coloca);
+        $("#sies,#noes,#abst").droppable({
+            drop: app.handleDropEvent
+        });
         $("#reset").click(app.resetea);
+
     }
 };
 $(document).ready(app.init);
