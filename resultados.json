@@ -1,37 +1,37 @@
 [
   {
     "nombre":"PP",
-    "dipu":123,
+    "dipu":66,
     "imagen":"logotipo-pp.png"
   },
   {
     "nombre":"PSOE",
-    "dipu":89,
+    "dipu":123,
     "imagen":"logotipo-psoe.png"
   },
   {
     "nombre":"Podemos",
-    "dipu":65,
+    "dipu":42,
     "imagen":"logotipo-podemos.png"
   },
   {
-    "nombre":"Compromis",
-    "dipu":4,
-    "imagen":"logotipo-compromis.png"
+    "nombre":"Vox",
+    "dipu":24,
+    "imagen":"logotipo-vox.jpeg"
   },
   {
     "nombre":"Ciudadanos",
-    "dipu":40,
+    "dipu":57,
     "imagen":"logotipo-ciudadanos.png"
   },
   {
     "nombre":"ERC",
-    "dipu":9,
+    "dipu":15,
     "imagen":"logotipo-erc.jpg"
   },
   {
-    "nombre":"DL",
-    "dipu":8,
+    "nombre":"Jpc",
+    "dipu":7,
     "imagen":"logotipo-ciu.png"
   },
   {
@@ -41,18 +41,27 @@
   },
   {
     "nombre":"Bildu",
-    "dipu":2,
+    "dipu":5,
     "imagen":"logotipo-bildu.png"
   },
   {
-    "nombre":"IU-UP",
+    "nombre":"NAplus",
     "dipu":2,
-    "imagen":"logotipo-iu.png"
+    "imagen":"logotipo-naplus.png"
   },
   {
     "nombre":"CC",
-    "dipu":1,
+    "dipu":2,
     "imagen":"logotipo-cc.png"
+  },
+  {
+    "nombre":"Compromís",
+    "dipu": 1,
+    "imagen": "logotipo-compromis.png"
+  },
+  {
+    "nombre":"PRC",
+    "dipu":1,
+    "imagen":"logotipo-prc.png"
   }
-
 ]
