@@ -92,11 +92,10 @@ var app={
         for (var i=0;i<num;i++){
             var boton=$(app.seleccionados[i]);
             //console.log(boton.attr("data-dipu"));
-            dipus=parseInt(dipus)
-                +parseInt(boton.attr("data-dipu"));
+            dipus+=parseInt(boton.attr("data-dipu"));
             $(div).children("h2")[0].innerHTML=dipus;
             //console.log($(boton[i]).attr("data-nombre"));
-            $(app.seleccionados[i]).hide();
+            $(boton).hide();
             //pinta logo en div
             var HTML="<img src='img/"+boton.attr("data-img")+"'/>";
             div.append(HTML);
@@ -112,8 +111,8 @@ var app={
         for(var i=0;i<num;i++){
             //console.log(i);
             var partido=this.resultados[i];
-            console.log(partido);
-            console.log(partido.nombre);
+            //console.log(partido);
+            //console.log(partido.nombre);
             //var partidoHTML='<button id="part-PP" data-dipu="123" data-nombre="PP" class="boton-partido" style="background-image: url(\"logotipo-pp.png\");"></button>';
 
             var partidoHTML="<button id='part-"+partido.nombre+"' " +
@@ -142,8 +141,8 @@ var app={
         //console.log("init");
         var jqxhr=$.get("resultados.json")
             .done(function(data) {
-                console.log(eval(data));
-                app.resultados=eval(data);;
+                //console.log(eval(data));
+                app.resultados=eval(data);
 
             })
             .fail(function(error) {
