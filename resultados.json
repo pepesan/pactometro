@@ -1,42 +1,42 @@
 [
   {
     "nombre":"PP",
-    "dipu":66,
+    "dipu":88,
     "imagen":"logotipo-pp.png"
   },
   {
     "nombre":"PSOE",
-    "dipu":123,
+    "dipu":120,
     "imagen":"logotipo-psoe.png"
   },
   {
     "nombre":"Podemos",
-    "dipu":42,
+    "dipu":35,
     "imagen":"logotipo-podemos.png"
   },
   {
     "nombre":"Vox",
-    "dipu":24,
+    "dipu":52,
     "imagen":"logotipo-vox.jpeg"
   },
   {
     "nombre":"Ciudadanos",
-    "dipu":57,
+    "dipu":10,
     "imagen":"logotipo-ciudadanos.png"
   },
   {
     "nombre":"ERC",
-    "dipu":15,
+    "dipu":13,
     "imagen":"logotipo-erc.jpg"
   },
   {
     "nombre":"Jpc",
-    "dipu":7,
+    "dipu":8,
     "imagen":"logotipo-ciu.png"
   },
   {
     "nombre":"PNV",
-    "dipu":6,
+    "dipu":7,
     "imagen":"logotipo-pnv.png"
   },
   {
@@ -50,18 +50,33 @@
     "imagen":"logotipo-naplus.png"
   },
   {
+    "nombre":"Cup",
+    "dipu":2,
+    "imagen":"logotipo-cup.png"
+  },
+  {
     "nombre":"CC",
     "dipu":2,
     "imagen":"logotipo-cc.png"
   },
   {
-    "nombre":"Compromís",
-    "dipu": 1,
-    "imagen": "logotipo-compromis.png"
+    "nombre":"MasPais",
+    "dipu": 3,
+    "imagen": "logotipo-mas-pais.png"
   },
   {
     "nombre":"PRC",
     "dipu":1,
     "imagen":"logotipo-prc.png"
+  },
+  {
+    "nombre":"TeruelExiste",
+    "dipu":1,
+    "imagen":"logotipo-teruel-existe.png"
+  },
+  {
+    "nombre":"BNG",
+    "dipu":1,
+    "imagen":"logotipo-bng.png"
   }
 ]
